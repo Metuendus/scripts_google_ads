@@ -14,10 +14,8 @@
   
 // for all settings below, you can change the Settings tab in your sheet
 // if those are blank, the default values below will be used
-  let fixedStartDate = '2023-11-01' // CAMBIA ESTA FECHA USANDO EL FORMATO YYYY-MM-DD
-  let fixedEndDate = '2023-11-31' // CAMBIA ESTA FECHA USANDO EL FORMATO YYYY-MM-DD
-  let fixedProductStart = '2023-11-01'  // CAMBIA ESTA FECHA USANDO EL FORMATO YYYY-MM-DD
-  let fixedProductEnd = '2023-11-31'  // CAMBIA ESTA FECHA USANDO EL FORMATO YYYY-MM-DD
+  let mainDateRange = ` segments.date BETWEEN "2023-11-01" AND "2023-11-31" `;
+  let prodDateRange = ` segments.date BETWEEN "2023-09-01" AND "2023-11-31" `;
   let tCost        = 10      // the 'threshold' for low vs high cost
   let tRoas        = 4       // the 'threshold' for low vs high roas (performance)   
 
@@ -88,8 +86,6 @@ function main() {
     
 // Date stuff --------------------------------------------
 // SQL Date Range
-let mainDateRange = ` segments.date BETWEEN "${fixedStartDate}" AND "${fixedEndDate}" `;
-let prodDateRange = ` segments.date BETWEEN "${fixedProductStart}" AND "${fixedProductEnd}" `;
 
 
     
