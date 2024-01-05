@@ -87,21 +87,9 @@ function main() {
 
     
 // Date stuff --------------------------------------------
-let timeZone = AdsApp.currentAccount().getTimeZone();
-// Fixed start and end dates
-let startDate = new Date(fixedStartDate);
-let endDate = new Date(fixedEndDate);
-let productStart = new Date(fixedProductStart);
-let productEnd = new Date(fixedProductEnd);
-
-// Format Dates
-let formattedStart = Utilities.formatDate(startDate, timeZone, 'yyyy-MM-dd');
-let formattedEnd = Utilities.formatDate(endDate, timeZone, 'yyyy-MM-dd');
-let formattedProduct   = Utilities.formatDate(productStart, timeZone, 'yyyy-MM-dd');
-
 // SQL Date Range
-let mainDateRange = ` segments.date BETWEEN "${formattedStart}" AND "${formattedEnd}" `;
-let prodDateRange = ` segments.date BETWEEN "${formattedProduct}" AND "${productEnd}" `;
+let mainDateRange = ` segments.date BETWEEN "${fixedStartDate}" AND "${fixedEndDate}" `;
+let prodDateRange = ` segments.date BETWEEN "${fixedProductStart}" AND "${fixedProductEnd}" `;
 
 
     
